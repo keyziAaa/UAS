@@ -118,4 +118,11 @@ int main(){
             else{
                 printf("\nBelum ada buku yang ditambahkan.\n\n");
             }
+        case 4:
+            if (jumlahBuku > 0){
+                char judulBuku[50];
+                int ditemukan = 0;
+                printf("\nKembalikan Buku");
+                printf("\nKetikkan Judul Buku : ");
+                scanf(" %[^\n]s", judulBuku);
             break;
