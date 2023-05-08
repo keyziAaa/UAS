@@ -28,3 +28,19 @@ int main()
         printf("-----------------------------\n");
         printf("Pilihan : ");
         scanf("%d", &pilihan);
+switch (pilihan)
+        {
+        case 1:
+            if (jumlahBuku < 50)
+            {
+                struct Buku buku;
+                printf("\nJudul Buku : ");
+                scanf(" %[^\n]s", buku.judul);
+                printf("Pengarang Buku : ");
+                scanf(" %[^\n]s", buku.pengarang);
+                printf("Penerbit Buku : ");
+                scanf(" %[^\n]s", buku.penerbit);
+                printf("Tahun Terbit Buku : ");
+                scanf("%d", &buku.tahunTerbit);
+                printf("Jumlah Halaman Buku : ");
+                scanf("%d", &buku.halaman);
