@@ -97,3 +97,17 @@ int main(){
                 printf("\nPinjam Buku");
                 printf("\nKetikkan Judul Buku : ");
                 scanf(" %[^\n]s", judulBuku);
+
+                for (int i = 0; i < jumlahBuku; i++){
+                    if (strcmp(daftarBuku[i].judul, judulBuku) == 0){
+                        if (daftarBuku[i].dipinjam){
+                            printf("\nBuku %s sedang dipinjam.\n\n", judulBuku);
+                        }
+                        else{
+                            daftarBuku[i].dipinjam = 1;
+                            printf("\nBuku %s berhasil dipinjam.\n\n", daftarBuku[i].judul);
+                        }
+                        ditemukan = 1;
+                        break;
+                    }
+                }
