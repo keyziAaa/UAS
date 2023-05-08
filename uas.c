@@ -59,3 +59,37 @@ int main(){
                 printf("\nGagal menambahkan buku karena telah penuh.\n\n");
             }
             break;
+case 2:
+            if (jumlahBuku > 0)
+            {
+                char judulBuku[50];
+                int ditemukan = 0;
+                printf("\nCari Buku");
+                printf("\nKetikkan Judul Buku : ");
+                scanf(" %[^\n]s", judulBuku);
+
+                for (int i = 0; i < jumlahBuku; i++)
+                {
+                    if (strcmp(daftarBuku[i].judul, judulBuku) == 0)
+                    {
+                        printf("\nJudul buku : %s\n", daftarBuku[i].judul);
+                        printf("Pengarang : %s\n", daftarBuku[i].pengarang);
+                        printf("Penerbit : %s\n", daftarBuku[i].penerbit);
+                        printf("Tahun terbit : %d\n", daftarBuku[i].tahunTerbit);
+                        printf("Jumlah halaman : %d\n", daftarBuku[i].halaman);
+                        printf("Status peminjaman : %s\n\n", daftarBuku[i].dipinjam ? "Dipinjam" : "Tersedia");
+                        ditemukan = 1;
+                        break;
+                    }
+                }
+
+                if (!ditemukan)
+                {
+                    printf("\nTidak ditemukan buku dengan judul %s.\n\n", judulBuku);
+                }
+            }
+            else
+            {
+                printf("\nBelum ada buku yang ditambahkan.\n\n");
+            }
+            break;
