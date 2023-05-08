@@ -148,5 +148,14 @@ int main(){
             }
             else{
                 printf("\nBelum ada buku yang ditambahkan.\n\n");
+                
+        case 5:
+            printf("\nTerima kasih telah menggunakan program manajemen perpustakaan.");
+            return 0;
+
+        default:
+            printf("\nPilihan tidak valid.\n\n");
+            break;
+        }
             }
             break;
