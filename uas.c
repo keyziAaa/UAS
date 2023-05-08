@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Buku
-{
+struct Buku{
     char judul[50];
     char pengarang[50];
     char penerbit[50];
@@ -11,14 +10,12 @@ struct Buku
     int dipinjam;
 };
 
-int main()
-{
+int main(){
     struct Buku daftarBuku[100];
     int jumlahBuku = 0;
     int pilihan;
 
-    while (1)
-    {
+    while (1){
         printf("---Manajemen Perpustakaan---\n");
         printf("|1. Tambah Buku             |\n");
         printf("|2. Cari Buku               |\n");
@@ -29,11 +26,9 @@ int main()
         printf("Pilihan : ");
         scanf("%d", &pilihan);
         
-        switch (pilihan)
-        {
+        switch (pilihan){
         case 1:
-            if (jumlahBuku < 50)
-            {
+            if (jumlahBuku < 50){
                 struct Buku buku;
                 printf("\nJudul Buku              : ");
                 scanf(" %[^\n]s", buku.judul);
@@ -45,14 +40,13 @@ int main()
                 scanf("%d", &buku.tahunTerbit);
                 printf("Jumlah Halaman Buku     : ");
                 scanf("%d", &buku.halaman);
+                
                 buku.dipinjam = 0;
                 daftarBuku[jumlahBuku] = buku;
                 jumlahBuku++;
                 FILE *file = fopen("data_perpustakaan.txt", "w");
-                if (file)
-                {
-                    for (int i = 0; i < jumlahBuku; i++)
-                    {
+                if (file){
+                    for (int i = 0; i < jumlahBuku; i++){
                         fprintf(file, "%s|%s|%s|%d|%d|%s\n", daftarBuku[i].judul, daftarBuku[i].pengarang,
                                 daftarBuku[i].penerbit, daftarBuku[i].tahunTerbit, daftarBuku[i].halaman,
                                 daftarBuku[i].dipinjam ? "Dipinjam" : "Tersedia");
@@ -61,8 +55,7 @@ int main()
                 }
                 printf("\nBuku berhasil ditambahkan.\n\n");
             }
-            else
-            {
+            else{
                 printf("\nGagal menambahkan buku karena telah penuh.\n\n");
             }
             break;
