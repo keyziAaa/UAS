@@ -111,3 +111,11 @@ int main(){
                         break;
                     }
                 }
+                if (!ditemukan){
+                    printf("\nTidak ditemukan buku dengan judul %s.\n\n", judulBuku);
+                }
+            }
+            else{
+                printf("\nBelum ada buku yang ditambahkan.\n\n");
+            }
+            break;
