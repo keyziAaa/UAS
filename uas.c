@@ -118,6 +118,8 @@ int main(){
             else{
                 printf("\nBelum ada buku yang ditambahkan.\n\n");
             }
+            break;
+
         case 4:
             if (jumlahBuku > 0){
                 char judulBuku[50];
@@ -125,4 +127,26 @@ int main(){
                 printf("\nKembalikan Buku");
                 printf("\nKetikkan Judul Buku : ");
                 scanf(" %[^\n]s", judulBuku);
+
+                for (int i = 0; i < jumlahBuku; i++){
+                    if (strcmp(daftarBuku[i].judul, judulBuku) == 0){
+                        if (!daftarBuku[i].dipinjam){
+                            printf("\nBuku %s belum dipinjam.\n\n", daftarBuku[i].judul);
+                        }
+                        else{
+                            daftarBuku[i].dipinjam = 0;
+                            printf("\nBuku %s berhasil dikembalikan.\n\n", daftarBuku[i].judul);
+                        }
+                        ditemukan = 1;
+                        break;
+                    }
+                }
+
+                if (!ditemukan){
+                    printf("\nTidak ditemukan buku dengan judul %s.\n\n", judulBuku);
+                }
+            }
+            else{
+                printf("\nBelum ada buku yang ditambahkan.\n\n");
+            }
             break;
