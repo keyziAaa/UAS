@@ -2,9 +2,9 @@
 #include <string.h>
 
 struct Buku{
-    char judul[50];
-    char pengarang[50];
-    char penerbit[50];
+    char judul[100];
+    char pengarang[100];
+    char penerbit[100];
     int tahunTerbit;
     int halaman;
     int dipinjam;
@@ -28,7 +28,7 @@ int main(){
 
         switch (pilihan){
         case 1:
-            if (jumlahBuku < 50){
+            if (jumlahBuku < 100){
                 struct Buku buku;
                 printf("\nJudul Buku              : ");
                 scanf(" %[^\n]s", buku.judul);
@@ -62,7 +62,7 @@ int main(){
 
         case 2:
             if (jumlahBuku > 0){
-                char judulBuku[50];
+                char judulBuku[100];
                 int ditemukan = 0;
                 printf("\nCari Buku");
                 printf("\nKetikkan Judul Buku : ");
@@ -92,7 +92,7 @@ int main(){
 
         case 3:
             if (jumlahBuku > 0){
-                char judulBuku[50];
+                char judulBuku[100];
                 int ditemukan = 0;
                 printf("\nPinjam Buku");
                 printf("\nKetikkan Judul Buku : ");
@@ -122,7 +122,7 @@ int main(){
 
         case 4:
             if (jumlahBuku > 0){
-                char judulBuku[50];
+                char judulBuku[100];
                 int ditemukan = 0;
                 printf("\nKembalikan Buku");
                 printf("\nKetikkan Judul Buku : ");
@@ -148,7 +148,9 @@ int main(){
             }
             else{
                 printf("\nBelum ada buku yang ditambahkan.\n\n");
-                
+            }
+            break;
+
         case 5:
             printf("\nTerima kasih telah menggunakan program manajemen perpustakaan.");
             return 0;
@@ -157,5 +159,6 @@ int main(){
             printf("\nPilihan tidak valid.\n\n");
             break;
         }
-            }
-            break;
+    }
+    return 0;
+}
